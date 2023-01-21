@@ -6,14 +6,31 @@
 CACHE="etc/containedpkg/cache" # Path to list of avaliable packages.
 REPOSITORY="http://localhost:8000"
 
-download() {
-	package="$1"
-	
-	echo "Downloading package."
-	wget "$REPOSITORY/packages/$package" -O "/tmp/$package"
+help() {
+	echo "Usage: cpkg <mode> <package>"
+	echo ""
+	echo "Modes"
+	echo "	help    -- This page"
+	echo "	search  -- Searches for packages"
+	echo "	install -- Install local package/Network package"
+	echo "	update  -- Update local packages list"
+
+	exit 1
 }
 
-install() {
+download() {
+	package="$1"
+	from_cmd="$2"
+	
+	echo "Downloading package."
+	if [ "$from_cmd" == 'yes' ]; then
+		wget "$REPOSITORY/packages/$package"
+	else
+		wget "$REPOSITORY/packages/$package" -O "/tmp/$package"
+	fi
+}
+
+install_pkg() {
 	echo "Installing package."
 	package="/tmp/$1"
 	extract_dir="$package-extracted"
@@ -39,14 +56,25 @@ package="$2"
 
 case $option in
 	"install")
-		download "$package";
+		# detect local package
+		if [ -f "$package" ]; then
+			install_pkg "$package"
+		else
+			download "$package";
 
-		[ "$?" = '0' ] && install "$package";
+			[ "$?" = '0' ] && install_pkg "$package";
+		fi
+	;;
+	"download")
+		download "$package" "yes";
 	;;
 	"search")
 		search "$package";
 	;;
 	"update")
 		update;
+	;;
+	"help")
+		help;
 	;;
 esac
