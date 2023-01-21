@@ -1,7 +1,7 @@
 # Containedpkg
 A attempt at making a easy to use [package manager](https://en.wikipedia.org/wiki/Package_manager) for Unix-like operating systems.
 
-It is ment to be a source-based package manager but it can also be used for something like appimages. the goal is make a easily and lightweight solution to installing packages on Unix-like systems
+It is ment to be a source-based package manager but it can also be used for something like appimages. the goal is make a easy and lightweight solution to installing packages on Unix-like systems
 
 # Dependacies
 You will need some sort of wget (to download packages)
