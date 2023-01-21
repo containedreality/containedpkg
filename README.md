@@ -5,11 +5,13 @@ It is ment to be a source-based package manager but it can also be used for some
 
 # Dependacies
 You will need some sort of wget (to download packages)
+
 [GNU wget](http://ftp.gnu.org/gnu/wget/)
 
 [Busybox wget](https://busybox.net/downloads/)
 
 Any shell with POSIX compatibility should work
+
 [Bash](http://ftp.gnu.org/gnu/bash/)
 
 [DASH](http://gondor.apana.org.au/~herbert/dash/)
