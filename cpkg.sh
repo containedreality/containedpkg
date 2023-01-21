@@ -10,10 +10,11 @@ help() {
 	echo "Usage: cpkg <mode> <package>"
 	echo ""
 	echo "Modes"
-	echo "	help    -- This page"
-	echo "	search  -- Searches for packages"
-	echo "	install -- Install local package/Network package"
-	echo "	update  -- Update local packages list"
+	echo "	help     -- This page"
+	echo "	search   -- Searches for packages"
+	echo "	install  -- Install local package/Network package"
+	echo "	update   -- Update local packages list"
+	echo "	download -- Download packge"
 
 	exit 1
 }
