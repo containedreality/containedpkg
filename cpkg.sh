@@ -3,7 +3,9 @@
 # It has no concept of versions. it has no concept of removing packages/what ever. but its simple.
 # configuration
 # export INSTALLDIR="$PWD"
+ROOT="$PWD" # Mainly used for testing
 CACHE="etc/containedpkg/cache" # Path to list of avaliable packages.
+REMOVE_LOCATION="var/containedpkg/" # Where remove.sh for packages go.
 REPOSITORY="http://localhost:8000"
 
 help() {
@@ -41,6 +43,9 @@ install_pkg() {
 	cd "$extract_dir"
 
 	$extract_dir/install.sh
+	echo $extract_dir/remove.sh
+	cd $ROOT
+	cp "$extract_dir"/remove.sh "$REMOVE_LOCATION""remove-hello.sh"
 }
 
 search() {
@@ -78,4 +83,6 @@ case $option in
 	"help")
 		help;
 	;;
+	"remove")
+		
 esac
