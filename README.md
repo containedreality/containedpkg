@@ -20,4 +20,5 @@ Any shell with POSIX compatibility should work
 
 # Notes
 Currently there is no pgp signed packages or support for signed pgp packages.
+
 It does not resolve dependacies.
