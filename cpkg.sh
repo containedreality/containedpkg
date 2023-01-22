@@ -82,7 +82,5 @@ case $option in
 	;;
 	"help")
 		help;
-	;;
-	"remove")
-		
+	;;		
 esac
