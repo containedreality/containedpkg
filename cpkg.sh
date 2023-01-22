@@ -4,8 +4,8 @@
 # configuration
 # export INSTALLDIR="$PWD"
 ROOT="$PWD" # Mainly used for testing
-CACHE="etc/containedpkg/cache" # Path to list of avaliable packages.
-REMOVE_LOCATION="var/containedpkg/" # Where remove.sh for packages go.
+CACHE="$PWD/etc/containedpkg/cache" # Path to list of avaliable packages.
+REMOVE_LOCATION="#PWD/var/containedpkg/" # Where remove.sh for packages go.
 REPOSITORY="http://localhost:8000"
 
 help() {
