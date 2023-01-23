@@ -17,7 +17,7 @@ help() {
 	echo "	install    -- Install local package/Network package"
 	echo "	update     -- Update local packages list"
 	echo "	download   -- Download packge"
-	echo "	remove	  -- Run remove script (Argument requires path to script.)"
+	echo "	remove	   -- Run remove script (Argument requires path to script.)"
 	echo "	setup_cpkg -- Create folders required in \$CPKG_ROOT ($CPKG_ROOT)"
 
 	exit 1
