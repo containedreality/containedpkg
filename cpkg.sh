@@ -17,6 +17,7 @@ help() {
 	echo "	install    -- Install local package/Network package"
 	echo "	update     -- Update local packages list"
 	echo "	download   -- Download packge"
+	echo "	remove	  -- Run remove script (Argument requires path to script.)"
 	echo "	setup_cpkg -- Create folders required in \$CPKG_ROOT ($CPKG_ROOT)"
 
 	exit 1
@@ -86,9 +87,12 @@ case $option in
 		help;
 	;;
 	"setup_cpkg")
-		mkdir $CPKG_ROOT/etc
-		mkdir $CPKG_ROOT/etc/containedpkg
-		mkdir $CPKG_ROOT/var
-		mkdir $CPKG_ROOT/var/containedpkg
+		mkdir "$CPKG_ROOT"/etc
+		mkdir "$CPKG_ROOT"/etc/containedpkg
+		mkdir "$CPKG_ROOT"/var
+		mkdir "$CPKG_ROOT"/var/containedpkg
+	;;
+	"remove")
+		./$2 # Just run remove script.
 	;;
 esac
