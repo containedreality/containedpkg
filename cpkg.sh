@@ -2,7 +2,7 @@
 
 # It has no concept of versions. it has no concept of removing packages/what ever. but its simple.
 # configuration
-export CPKG_ROOT="$PWD" # Mainly used for testing
+export CPKG_ROOT="$PWD/fakerootdir" # Mainly used for testing
 export INSTALLDIR="$CPKG_ROOT"
 export CACHE="$CPKG_ROOT/etc/containedpkg/cache" # Path to list of avaliable packages.
 export REMOVE_LOCATION="$CPKG_ROOT/var/containedpkg/" # Where remove.sh for packages go.
@@ -12,11 +12,12 @@ help() {
 	echo "Usage: cpkg <mode> <package>"
 	echo ""
 	echo "Modes"
-	echo "	help     -- This page"
-	echo "	search   -- Searches for packages"
-	echo "	install  -- Install local package/Network package"
-	echo "	update   -- Update local packages list"
-	echo "	download -- Download packge"
+	echo "	help       -- This page"
+	echo "	search     -- Searches for packages"
+	echo "	install    -- Install local package/Network package"
+	echo "	update     -- Update local packages list"
+	echo "	download   -- Download packge"
+	echo "	setup_cpkg -- Create folders required in \$CPKG_ROOT ($CPKG_ROOT)"
 
 	exit 1
 }
@@ -83,5 +84,11 @@ case $option in
 	;;
 	"help")
 		help;
-	;;		
+	;;
+	"setup_cpkg")
+		mkdir $CPKG_ROOT/etc
+		mkdir $CPKG_ROOT/etc/containedpkg
+		mkdir $CPKG_ROOT/var
+		mkdir $CPKG_ROOT/var/containedpkg
+	;;
 esac
