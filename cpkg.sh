@@ -93,6 +93,7 @@ case $option in
 		mkdir "$CPKG_ROOT"/var/containedpkg
 	;;
 	"remove")
-		./$2 # Just run remove script.
+		$2 # Just run remove script.
+		rm $2 # Delete script when done the script
 	;;
 esac
