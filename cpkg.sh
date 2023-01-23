@@ -2,11 +2,11 @@
 
 # It has no concept of versions. it has no concept of removing packages/what ever. but its simple.
 # configuration
-# export INSTALLDIR="$PWD"
-ROOT="$PWD" # Mainly used for testing
-CACHE="$ROOT/etc/containedpkg/cache" # Path to list of avaliable packages.
-REMOVE_LOCATION="$ROOT/var/containedpkg/" # Where remove.sh for packages go.
-REPOSITORY="http://localhost:8000"
+export CPKG_ROOT="$PWD" # Mainly used for testing
+export INSTALLDIR="$CPKG_ROOT"
+export CACHE="$CPKG_ROOT/etc/containedpkg/cache" # Path to list of avaliable packages.
+export REMOVE_LOCATION="$CPKG_ROOT/var/containedpkg/" # Where remove.sh for packages go.
+export REPOSITORY="http://localhost:8000"
 
 help() {
 	echo "Usage: cpkg <mode> <package>"
@@ -43,9 +43,10 @@ install_pkg() {
 	cd "$extract_dir"
 
 	$extract_dir/install.sh
-	echo $extract_dir/remove.sh
-	cd $ROOT
-	cp "$extract_dir"/remove.sh "$REMOVE_LOCATION""remove-hello.sh"
+	# echo $extract_dir/remove.sh
+	# cd $CPKG_ROOT
+	# cp "$extract_dir"/remove.sh "$REMOVE_LOCATION""remove-hello.sh"
+	
 }
 
 search() {
