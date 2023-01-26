@@ -1,4 +1,4 @@
-# Containedpkg
+# containedpkg
 A attempt at making a easy to use [package manager](https://en.wikipedia.org/wiki/Package_manager) for Unix-like operating systems.
 
 It is ment to be used for portable scripts/source code but it can also be used for something like appimages. the goal is make a easy and lightweight solution to installing packages on Unix-like systems
