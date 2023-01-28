@@ -25,5 +25,7 @@ It does not resolve dependacies.
 
 It does not have upgrading packages or any concept of versions.
 
+It barely works. and as its in early development probably will have A LOT of issues.
+
 ## Why?
 I needed something to install/remove portable scripts/binaries on my systems.
