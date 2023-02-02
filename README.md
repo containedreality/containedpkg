@@ -21,7 +21,9 @@ Any shell with POSIX compatibility should work
 You will need some sort of tar
 
 [GNU tar](https://ftpmirror.gnu.org/tar/)
+
 [Busybox tar](https://www.busybox.net/downloads/)
+
 [libarchive](https://www.libarchive.org/)
 
 # Notes
