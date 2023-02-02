@@ -18,6 +18,12 @@ Any shell with POSIX compatibility should work
 
 [mksh](http://www.mirbsd.org/mksh.htm)
 
+You will need some sort of tar
+
+[GNU tar](https://ftpmirror.gnu.org/tar/)
+[Busybox tar](https://www.busybox.net/downloads/)
+[libarchive](https://www.libarchive.org/)
+
 # Notes
 Currently there is no pgp signed packages or support for signed pgp packages.
 
