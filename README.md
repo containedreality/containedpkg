@@ -35,5 +35,18 @@ It does not have upgrading packages or any concept of versions.
 
 It barely works. and as its in early development probably will have A LOT of issues.
 
+# Configuration
+Configuration is done in the shellscript itself. through variables.
+
+CPKG_ROOT       -- Directory where everything is gonna be installed
+
+INSTALLDIR      -- Deprecated for the most part. I guess some scripts will use it, but I'm going for more hardcoded paths.
+
+CACHE           -- the list of available packages. downloadable from the repository
+
+REMOVE_LOCATION -- Deprecated for the most part. The install script should just have a hardcoded path for its remove script.
+
+REPOSITORY      -- Typical repository.
+
 ## Why?
 I needed something to install/remove portable scripts/binaries on my systems.
