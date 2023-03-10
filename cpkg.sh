@@ -28,7 +28,7 @@ download() {
 	from_cmd="$2"
 	
 	echo "Downloading package."
-	if [ "$from_cmd" == 'yes' ]; then
+	if [ "$from_cmd" = 'yes' ]; then
 		wget "$REPOSITORY/packages/$package"
 	else
 		wget "$REPOSITORY/packages/$package" -O "/tmp/$package"
@@ -42,13 +42,9 @@ install_pkg() {
 	
 	mkdir "$extract_dir"
 	tar -xf "$package" -C "$extract_dir"
-	cd "$extract_dir"
+	cd "$extract_dir" || exit 1
 
-	$extract_dir/install.sh
-	# echo $extract_dir/remove.sh
-	# cd $CPKG_ROOT
-	# cp "$extract_dir"/remove.sh "$REMOVE_LOCATION""remove-hello.sh"
-	
+	"$extract_dir"/install.sh
 }
 
 search() {
@@ -71,7 +67,7 @@ case $option in
 		else
 			download "$package";
 
-			[ "$?" = '0' ] && install_pkg "$package";
+			[ "$?" = '0' ] && install_pkg "$package"; # kinda just ignoring SC2181 here.
 		fi
 	;;
 	"download")
@@ -94,6 +90,6 @@ case $option in
 	;;
 	"remove")
 		$2 # Just run remove script.
-		rm $2 # Delete script when done the script
+		rm "$2" # Delete script when done the script
 	;;
 esac
